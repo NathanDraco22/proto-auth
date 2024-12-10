@@ -4,4 +4,4 @@ Reusable Auth Micro service
 - Email + Verification 
 - Phone Number 
 - Google Sign in 
-- Apple Sign in# proto-auth
+- Apple Sign in
