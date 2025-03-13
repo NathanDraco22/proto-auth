@@ -23,7 +23,6 @@ class TokenGenerator:
         payload: dict[str, Any] | None = None,
     ) -> str:
         claims: Claims = {
-            "type": "REFRESH",
             "sub": user_id,
             "iat": now_in_seconds(),
             "exp": in_one_month(),
@@ -41,7 +40,6 @@ class TokenGenerator:
     ) -> str:
         access_token_exp = access_token_exp_in_seconds()
         claims: Claims = {
-            "type": "REFRESH",
             "sub": user_id,
             "iat": now_in_seconds(),
             "exp": access_token_exp,
