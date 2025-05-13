@@ -24,8 +24,8 @@ def generate_ed25519_key_pair() -> None:
         f.write(public_pem)
 
     print(
-        "Private key saved to: ed25519_private_key.pem",
-        "Public key saved to: ed25519_public_key.pem",
+        "Private key saved to: openssh_ed25519_private_key.pem",
+        "Public key saved to: openssh_ed25519_public_key.pem",
     )
 
 
