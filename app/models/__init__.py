@@ -1,6 +1,8 @@
-from .account_model import AccountModel, AccountInfo
+from .email_account_model import AccountInfo, EmailAccountModel
+from .google_account_model import GoogleAccountModel
 
 __all__ = [
-    "AccountModel",
     "AccountInfo",
+    "EmailAccountModel",
+    "GoogleAccountModel",
 ]

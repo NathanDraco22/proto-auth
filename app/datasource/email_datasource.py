@@ -23,5 +23,9 @@ class EmailDataSource:
         res = await col.find_one({"email": email})
         return res is not None
 
+    async def update_last_login(self, id: str, last_login: int) -> None:
+        col = self.db_service.get_email_collection()
+        await col.update_one({"id": id}, {"$set": {"lastLogin": last_login}})
+
 
 email_datasource = EmailDataSource(mongo_service)

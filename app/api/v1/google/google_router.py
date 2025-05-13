@@ -1,14 +1,15 @@
 from fastapi import APIRouter
+from datasource import google_account_datasource
 
-from entities.bodies import GoogleSignInBody
+from .entities.bodies import GoogleSignInBody
 
 from .google_controller import GoogleController
 
 google_router = APIRouter()
 
-controller = GoogleController()
+controller = GoogleController(google_account_datasource)
 
 
-@google_router.get("/signin")
+@google_router.post("/signin")
 async def google_signin(body: GoogleSignInBody):
-    return controller.sign_in(body)
+    return await controller.sign_in(body)
