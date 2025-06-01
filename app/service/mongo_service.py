@@ -8,6 +8,7 @@ from motor.motor_asyncio import (
 from tools import get_mongo_url, get_db_name
 
 EMAIL_COLLECTION = "email"
+GOOGLE_ACCOUNT_COLLECTION = "googleAccount"
 
 
 class MongoService:
@@ -35,6 +36,9 @@ class MongoService:
 
     def get_email_collection(self) -> AsyncIOMotorCollection[dict[str, Any]]:
         return self._db.get_collection(EMAIL_COLLECTION)
+
+    def get_google_account_collection(self) -> AsyncIOMotorCollection[dict[str, Any]]:
+        return self._db.get_collection(GOOGLE_ACCOUNT_COLLECTION)
 
 
 mongo_service = MongoService()
